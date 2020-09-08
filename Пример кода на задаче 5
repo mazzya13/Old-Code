@@ -42,7 +42,7 @@ namespace CodeWars7
 
 Посмотрев подсказки:
 
-sing System;
+Using System;
 
 namespace CodeWars7
 {
