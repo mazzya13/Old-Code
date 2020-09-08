@@ -1,0 +1,31 @@
+На вход дается число, нужно каждую его цифру возвести в квадрат и записать в том же порядке.
+Например: 
+на вход: 235
+выход: 4925
+
+using System;
+
+namespace CodeWars9
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = Kata.Math(235);
+            Console.WriteLine(n);
+        }
+    }
+    public static class Kata
+    {
+        public static int Math(int n)
+        {
+            string result = "";
+            foreach (char c in n.ToString())
+            {
+                int a = int.Parse(c.ToString());
+                result += a * a;
+            }
+            return int.Parse(result);
+        }
+    }
+}
