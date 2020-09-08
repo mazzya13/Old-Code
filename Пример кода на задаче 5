@@ -1,0 +1,40 @@
+Usually when you buy something, you're asked whether your credit card number, phone number or answer to your most secret question is still correct.
+However, since someone could look over your shoulder, you don't want that shown on your screen. 
+Instead, we mask it.
+Your task is to write a function maskify, which changes all but the last four characters into '#'.
+
+using System;
+
+namespace CodeWars7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string a = Kata.Maskify("22");
+            Console.WriteLine(a);
+        }
+    }
+    public static class Kata
+    {
+        // return masked string
+        public static string Maskify(string cc)
+        {
+            int ccLength = cc.Length;
+            string cc1 = "";
+            if (ccLength <= 4)
+            {
+                return cc;
+            }
+            else
+            {
+                cc = cc.Substring(ccLength - 4);
+            }
+            for (int i = 0; i < ccLength - 4; i++)
+            {
+                cc1 += "#";
+            }
+            return cc1 + cc;
+        }
+    }
+}
