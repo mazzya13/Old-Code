@@ -1,0 +1,45 @@
+Given n, take the sum of the digits of n. 
+If that value has more than one digit, continue reducing in this way until a single-digit number is produced. 
+This is only applicable to the natural numbers.
+
+Находить сумму цифр числа n, пока результат не будет состоять из одной цифры.
+
+static void Main(string[] args)
+        {
+            int n = Convert.ToInt32(Console.ReadLine());
+            while (true)
+            {
+                if (n / 10 == 0)
+                {
+                    Console.WriteLine(n);
+                    break;
+                }
+                else
+                {
+                    n = MethodWhile(n);
+                }
+            }
+        }
+static int MethodWhile(int n, int a = 0)
+        {
+            List<int> numbers = new List<int>();
+            while (true)
+            {
+                if (n == 0)
+                {
+                    break;
+                }
+                else
+                {
+                    a = n % 10;
+                    numbers.Add(a);
+                    n = n / 10;
+                }
+            }
+            var sum = 0;
+            foreach (var i in numbers)
+            {
+                sum += i;
+            }
+            return sum;
+        }
