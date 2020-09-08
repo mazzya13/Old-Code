@@ -38,3 +38,34 @@ namespace CodeWars7
         }
     }
 }
+
+
+Посмотрев подсказки:
+
+sing System;
+
+namespace CodeWars7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string a = Kata.Maskify("5545454646522");
+            Console.WriteLine(a);
+        }
+    }
+    public static class Kata
+    {
+        // return masked string
+        public static string Maskify(string cc)
+        {
+            int ccLen = cc.Length;
+            if (ccLen <= 4)
+                return cc;
+
+            return new String('#', ccLen - 4) + cc.Substring(ccLen - 4);
+        }
+    }
+}
+
+
