@@ -1,0 +1,47 @@
+An isogram is a word that has no repeating letters, consecutive or non-consecutive. 
+Implement a function that determines whether a string that contains only letters is an isogram.
+Assume the empty string is an isogram. Ignore letter case.
+
+Изограмма это слово, в котором нет повторяющихся букв, последовательны или непоследовательно.
+Реализуйте функцию, которая определяет, является ли введеная строка, содержащая только буквы, изограммой.
+Считая, что пустая строка - это изограм. Игнорируйте регистр букв.
+
+
+using System;
+using System.Linq;
+
+namespace CodeWars5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str = "";
+            bool result = Kata.IsIsogram(str);
+            Console.WriteLine(result);
+        }
+    }
+    public class Kata
+    {
+        public static bool IsIsogram(string str)
+        {
+            bool res = true;
+            str = str.ToUpper();
+            char[] array = str.ToCharArray();
+            Array.Sort(array);
+            for (int i = 0; i < str.Length - 1; i++)
+            {
+                if (array[i] != array[i + 1])
+                {
+                    res = true;
+                }
+                else
+                {
+                    res = false;
+                    break;
+                }
+            }
+            return res;
+        }
+    }
+}
