@@ -1,0 +1,25 @@
+На вход подается массив, сложить два самых маленьких его элемента, с помощью метода вернуть значение;
+        
+        
+using System;
+
+namespace CodeWars2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = { 12, 8, 9, 7, 55, 66 };
+            int n = Kata.sumTwoSmallestNumbers(array);
+            Console.WriteLine(n);
+        }
+    }
+    public static class Kata
+    {
+        public static int sumTwoSmallestNumbers(int[] numbers)
+        {
+            Array.Sort(numbers);
+            return (numbers[0] + numbers[1]);
+        }
+    }
+}
